@@ -1,12 +1,12 @@
 <h4>Results returned: <%= @foods.count %></h4>
 
 <% @foods.each do |food| %>
-  <section class='food' id='food-<%= food[:fdcId] %>'>
-    <h2 class='description'><%= food[:description] %></h2>
+  <section class='food' id='food-<%= food.fdc_id %>'>
+    <h2 class='description'><%= food.description %></h2>
     <ul>
-      <li class='id'>GTIN/UPC code: <%= food[:gtinUpc] %></li>
-      <li class='owner'>Brand owner: <%= food[:brandOwner] %></li>
-      <li class='ingredients'>Ingredients: <%= food[:ingredients] %></li>
+      <li class='id'>GTIN/UPC code: <%= food.gtin_upc %></li>
+      <li class='owner'>Brand owner: <%= food.brand_owner %></li>
+      <li class='ingredients'>Ingredients: <%= food.ingredients %></li>
     </ul>
   </section>
 <% end %>
