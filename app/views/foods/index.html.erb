@@ -2,6 +2,11 @@
 
 <% @foods.each do |food| %>
   <section class='food' id='food-<%= food[:fdcId] %>'>
-    
+    <h2 class='description'><%= food[:description] %></h2>
+    <ul>
+      <li class='id'>GTIN/UPC code: <%= food[:gtinUpc] %></li>
+      <li class='owner'>Brand owner: <%= food[:brandOwner] %></li>
+      <li class='ingredients'>Ingredients: <%= food[:ingredients] %></li>
+    </ul>
   </section>
 <% end %>

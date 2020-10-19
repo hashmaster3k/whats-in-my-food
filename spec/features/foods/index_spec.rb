@@ -16,4 +16,24 @@ RSpec.describe 'FOODS INDEX PAGE' do
     expect(page).to have_content('Results returned: 10')
     expect(page).to have_css('.food', count: 10)
   end
-end
+
+  it 'displays relevant information' do
+    within(first('.food')) do
+      expect(page).to have_css('.id')
+      id = find('.id').text
+      expect(id).to_not be_empty
+
+      expect(page).to have_css('.description')
+      description = find('.description').text
+      expect(description).to_not be_empty
+
+      expect(page).to have_css('.owner')
+      owner = find('.owner').text
+      expect(owner).to_not be_empty
+
+      expect(page).to have_css('.ingredients')
+      ingredients = find('.ingredients').text
+      expect(ingredients).to_not be_empty
+    end
+  end
+ end
