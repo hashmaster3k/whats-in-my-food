@@ -15,4 +15,14 @@ RSpec.describe Food do
     expect(food.brand_owner).to eq(attributes[:brandOwner])
     expect(food.ingredients).to eq(attributes[:ingredients])
   end
+
+  it 'displays something if a field is not returned by the API' do
+    attributes = {gtinUpc: "123723782",
+                  description: "Pepperoni"}
+
+    food = Food.new(attributes)
+
+    expect(food.brand_owner).to eq('Not available')
+    expect(food.ingredients).to eq('Not available')
+  end
 end
